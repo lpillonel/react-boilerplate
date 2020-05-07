@@ -42,7 +42,9 @@
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "lint-staged": {
     "*.js": "lint:eslint"
@@ -244,7 +246,8 @@
     "sanitize.css": "5.0.0",
     "styled-components": "1.4.4",
     "warning": "3.0.0",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "snyk": "^1.319.1"
   },
   "devDependencies": {
     "babel-cli": "6.24.0",
@@ -298,5 +301,6 @@
     "webpack": "2.3.1",
     "webpack-dev-middleware": "1.10.1",
     "webpack-hot-middleware": "2.17.1"
-  }
+  },
+  "snyk": true
 }
